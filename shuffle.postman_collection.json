@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "395dd7ea-f698-4b53-ac7b-c89afe5c7374",
+		"name": "shuffle",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23428387",
+		"_collection_link": "https://www.postman.com/joint-operations-astronaut-31021506/workspace/flask-n3/collection/23428387-395dd7ea-f698-4b53-ac7b-c89afe5c7374?action=share&source=collection_link&creator=23428387"
+	},
+	"item": [
+		{
+			"name": "posts post",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "posts get",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "users get",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "users post",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
