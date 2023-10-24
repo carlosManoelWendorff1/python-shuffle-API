@@ -5,7 +5,6 @@ FROM python:3.9
 WORKDIR /app
 
 # Create the /app directory and make it writable
-RUN mkdir /app
 
 # Copy the current directory contents into the container at /app
 COPY . /app
