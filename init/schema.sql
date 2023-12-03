@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS shuffle_database;
+
+CREATE TABLE IF NOT EXISTS `shuffle_database`.`users` (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(80) UNIQUE NOT NULL,
+    email VARCHAR(120) UNIQUE NOT NULL,
+    password VARCHAR(80) NOT NULL,
+    role VARCHAR(20) NOT NULL,
+    created DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_by VARCHAR(80),
+    last_modified DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    last_modified_by VARCHAR(80)
+);
+
+CREATE TABLE IF NOT EXISTS `shuffle_database`.`posts` (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    last_modified_by VARCHAR(80),
+    last_modified DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_by VARCHAR(80),
+    created DATETIME DEFAULT CURRENT_TIMESTAMP,
+    content VARCHAR(500),
+    title VARCHAR(100)
+);
