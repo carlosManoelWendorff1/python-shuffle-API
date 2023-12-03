@@ -1,11 +1,11 @@
-# python-shuffle-API
+# Shuffle API
 
 # run dev
 
-  - pip install -r requirements.txt
-  - python app.py
+- pip install -r requirements.txt
+- python app.py
 
 # run prod
-  - docker compose build
-  - docker compose up
-  - 
+
+- docker compose build
+- docker compose up
