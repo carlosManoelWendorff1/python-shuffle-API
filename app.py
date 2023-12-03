@@ -7,7 +7,6 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-# Database connection setup
 db_username = "admin"
 db_password = "12345678"
 db_host = "shuffle.cno5zkhzwncl.us-east-2.rds.amazonaws.com"
@@ -18,7 +17,6 @@ Base = declarative_base()
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-# Define the User model
 class User(Base):
     __tablename__ = 'users'
 
@@ -40,7 +38,6 @@ class User(Base):
         self.created_by = created_by
         self.last_modified_by = created_by
 
-# Define the Post model
 class Post(Base):
     __tablename__ = 'posts'
 
@@ -82,9 +79,7 @@ def post_to_dict(post):
         'title': post.title
     }
 
-# Create the database tables
 Base.metadata.create_all(engine)
-# CRUD routes for users
 @app.route('/users', methods=['GET'])
 def get_users():
     users = session.query(User).all()
@@ -99,7 +94,7 @@ def create_user():
         email = data["email"]
         password = data["password"]
         role = data["role"]
-        created_by = "admin"  # You can set the created_by user as needed
+        created_by = "admin" 
         user = User(username=username, email=email, password=password, role=role, created_by=created_by)
         session.add(user)
         session.commit()
@@ -107,7 +102,6 @@ def create_user():
     else:
         return "Missing data", 400
 
-# CRUD routes for posts
 @app.route('/posts', methods=['GET'])
 def get_posts():
     posts = session.query(Post).all()
@@ -120,7 +114,7 @@ def create_post():
     if "content" in data and "title" in data:
         content = data["content"]
         title = data["title"]
-        created_by = "admin"  # You can set the created_by user as needed
+        created_by = "admin" 
         post = Post(last_modified_by=created_by, created_by=created_by, content=content, title=title)
         session.add(post)
         try:
@@ -131,7 +125,6 @@ def create_post():
             return "Invalid data", 400
     else:
         return "Missing data", 400
-# Continue with update and delete routes for posts, if needed
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
