@@ -3,7 +3,7 @@
 # run dev
 
 - pip install -r requirements.txt
-- python app.py
+- python src/app.py
 
 # run prod
 
